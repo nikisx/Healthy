@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
@@ -15,10 +16,10 @@ class Header extends Component {
           <div className="top-nav s-12 l-10">
             <p className="nav-text"></p>
             <ul className="right chevron">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="products.html">Products</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><NavLink to="/" exact>Home</NavLink></li>
+              <li><NavLink to="/products">Products</NavLink></li>
+              <li><NavLink to="/about">About</NavLink></li>
+              <li><NavLink to="/contacts">Contact</NavLink></li>
             </ul>
           </div>
         </div>
