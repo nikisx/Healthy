@@ -8,11 +8,13 @@ class Carousel extends Component {
         super(props);
         this.state = {}
     }
+
+    
     
     render() {
         const AutoplaySlider = withAutoplay(AwesomeSlider);
         return (
-           <AutoplaySlider  play={true}
+            <AutoplaySlider  play={true}
            cancelOnInteraction={false} // should stop playing on user interaction
            interval={6000}  
            bullets={false}

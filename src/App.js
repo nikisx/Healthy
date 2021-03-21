@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import Carousel from './components/Carousel/Carousel';
 import { Route, Switch } from 'react-router';
 
+
 function App() {
   return (
     <>

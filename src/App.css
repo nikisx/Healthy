@@ -3089,3 +3089,11 @@ p.form-success {
     .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
       background: #869791; }
 
+      .semplice-navbar {
+        position: fixed !important;
+        transition: ease transform 0.3s !important;
+        z-index: 999;
+      }
+      .semplice-navbar.hide-navbar {
+        transform: translateY(-100%) !important;
+      }
