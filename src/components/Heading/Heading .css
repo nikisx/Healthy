@@ -1,0 +1,9 @@
+.title{
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 34%;
+    z-index: 989;
+    font-size: 70px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
