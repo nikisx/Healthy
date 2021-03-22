@@ -5,6 +5,8 @@ import Footer from './components/Footer/Footer';
 import Carousel from './components/Carousel/Carousel';
 import { Route, Switch } from 'react-router';
 import Heading from './components/Heading/Heading';
+import Banner from './components/Banner/Banner';
+import ImageBanner from './components/Banner/ImageBanner';
 
 
 function App() {
@@ -18,6 +20,11 @@ function App() {
           <Heading>
             HEALTHY EATING
           </Heading>
+          <Banner 
+          heading="Difrent menus"
+          text="Test Test TestTestTestTestTestTestTestTestTestTestTest"
+          />
+          <ImageBanner/>
         </Route>
       </Switch>
 
