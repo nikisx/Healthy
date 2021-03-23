@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router';
 import Heading from './components/Heading/Heading';
 import Banner from './components/Banner/Banner';
 import ImageBanner from './components/Banner/ImageBanner';
+import MealPlansContainer from './components/MealPlansConatiner/MealPlansContainer';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Heading>
             HEALTHY EATING
           </Heading>
+          <MealPlansContainer/>
           <Banner 
           heading="Difrent menus"
           text="Test Test TestTestTestTestTestTestTestTestTestTestTest"
