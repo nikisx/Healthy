@@ -11,7 +11,7 @@ class MealPlansContainer extends Component {
 
     componentDidMount() {
         mealPlansService.getAll()
-            .then(res => this.setState({mealPlans: res})) 
+            .then(res => this.setState({mealPlans: res.sort(function(){return .5 - Math.random()}).slice(0,3)})) 
     }
     
     render() { 

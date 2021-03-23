@@ -23,8 +23,7 @@ class Carousel extends Component {
            animation="cubeAnimation">
                <div data-src="/imgs/test-image.gif"/>
                <div data-src="/imgs/image4.gif"/>
-
-
+               <div data-src="/imgs/image5.gif"/>
            </AutoplaySlider>
         );
     }
