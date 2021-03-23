@@ -19,7 +19,7 @@ class MealPlansContainer extends Component {
             <section className="section background-white"> 
         <div className="line">
           <div className="margin">
-            {this.state.mealPlans.map(x=> <MealPlanCard
+            {this.state.mealPlans.length ===0 ? <p className="three-quarters-loader">Loading...</p> :this.state.mealPlans.map(x=> <MealPlanCard
             key={x.key}
             name={x.name}
             image={x.img}
