@@ -34,7 +34,7 @@ class Header extends Component {
             <nav className="background-white background-primary-hightlight semplice-navbar">
         <div className="line">
           <div className="s-12 l-2">
-            <a href="index.html" className="logo"><img src="img/logo-free.png" alt=""/></a>
+            <a href="/" className="logo"><img src="/imgs/HMP-LOGO_horizontal.png" alt=""/></a>
           </div>
           <div className="top-nav s-12 l-10">
             <p className="nav-text"></p>

@@ -3146,4 +3146,11 @@ p.form-success {
         text-indent: -9999px;
         width: 32px;
         height: 32px;
+        left: 50%;
+      }
+      .icon{
+        color: #49BF4C !important;
+    font-size: 20px !important;
+    top: 1px !important;
+    position: relative !important;
       }

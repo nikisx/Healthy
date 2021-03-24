@@ -23,8 +23,8 @@ function App() {
           </Heading>
           <MealPlansContainer/>
           <Banner 
-          heading="Difrent menus"
-          text="Test Test TestTestTestTestTestTestTestTestTestTestTest"
+          heading="Different menus"
+          text="We've got hundreds of delicious recipes for every taste and dietary preference. Browse them all using our Search and Filter tools and choose the ones that are right for you."
           />
           <ImageBanner/>
         </Route>
