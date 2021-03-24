@@ -40,7 +40,7 @@ class Header extends Component {
             <p className="nav-text"></p>
             <ul className="right chevron">
               <li><NavLink to="/" exact>Home</NavLink></li>
-              <li><NavLink to="/products">Products</NavLink></li>
+              <li><NavLink to="/plans">Plans</NavLink></li>
               <li><NavLink to="/about">About</NavLink></li>
               <li><NavLink to="/contacts">Contact</NavLink></li>
             </ul>

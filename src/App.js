@@ -10,6 +10,7 @@ import ImageBanner from './components/Banner/ImageBanner';
 import MealPlansContainer from './components/MealPlansConatiner/MealPlansContainer';
 
 
+
 function App() {
   return (
     <>
@@ -21,12 +22,15 @@ function App() {
           <Heading>
             HEALTHY EATING
           </Heading>
-          <MealPlansContainer/>
-          <Banner 
-          heading="Different menus"
-          text="We've got hundreds of delicious recipes for every taste and dietary preference. Browse them all using our Search and Filter tools and choose the ones that are right for you."
+          <MealPlansContainer take="3" />
+          <Banner
+            heading="Different menus"
+            text="We've got hundreds of delicious recipes for every taste and dietary preference. Browse them all using our Search and Filter tools and choose the ones that are right for you."
           />
-          <ImageBanner/>
+          <ImageBanner />
+        </Route>
+        <Route path="/plans">
+          <MealPlansContainer />
         </Route>
       </Switch>
 
