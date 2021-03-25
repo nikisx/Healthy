@@ -29,9 +29,10 @@ function App() {
           />
           <ImageBanner />
         </Route>
-        <Route path="/plans">
+        <Route path="/plans/all" >
           <MealPlansContainer />
         </Route>
+        <Route path="/categories/:category" component={MealPlansContainer} />
       </Switch>
 
       <Footer />

@@ -7,7 +7,15 @@ class MealPlanCard extends Component {
         this.state = {  }
     }
     render() { 
-        Object.keys(this.props.meals).map(x=> console.log(`${x}-${this.props.meals[x]}`))
+        // Object.keys(this.props.meals).map(x=> console.log(`${x}-${this.props.meals[x]}`))
+        
+        // if (this.props.category === "vegan") {
+        //     console.log("mathc");
+        // }
+        // else{
+        //     console.log("fail");
+        // }
+        // console.log(this.props.categoryToFind);
         return ( 
             <Link to={"/details/"+this.props.id}>
             <div style={{width:"450px", margin: "0 20px"}} >
