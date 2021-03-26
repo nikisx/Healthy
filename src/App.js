@@ -8,6 +8,7 @@ import Heading from './components/Heading/Heading';
 import Banner from './components/Banner/Banner';
 import ImageBanner from './components/Banner/ImageBanner';
 import MealPlansContainer from './components/MealPlansConatiner/MealPlansContainer';
+import MealPlanDetails from './components/MealPlanDetails/MealPlanDetails';
 
 
 
@@ -33,6 +34,7 @@ function App() {
           <MealPlansContainer />
         </Route>
         <Route path="/categories/:category" component={MealPlansContainer} />
+        <Route path="/details/:id" component={MealPlanDetails}/>
       </Switch>
 
       <Footer />

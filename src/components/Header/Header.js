@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import $ from "jquery";
 
 class Header extends Component {
@@ -34,7 +34,7 @@ class Header extends Component {
             <nav className="background-white background-primary-hightlight semplice-navbar">
         <div className="line">
           <div className="s-12 l-2">
-            <a href="/" className="logo"><img src="/imgs/HMP-LOGO_horizontal.png" alt=""/></a>
+            <Link to="/" className="logo"><img src="/imgs/HMP-LOGO_horizontal.png" alt=""/></Link>
           </div>
           <div className="top-nav s-12 l-10">
             <p className="nav-text"></p>

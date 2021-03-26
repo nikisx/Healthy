@@ -10,3 +10,8 @@ export const getAll = async () =>{
 
    return Object.keys(data).map(key => ({key, ...data[key]}));
 }
+
+export const getDetails = async(id) =>{
+    let details = await fetch(`https://my-users-aa933-default-rtdb.europe-west1.firebasedatabase.app/mealPlans/${id}.json`);
+    return await details.json();
+}
