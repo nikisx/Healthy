@@ -46,7 +46,7 @@ class MealPlansContainer extends Component {
             <section className="section background-white">
                 {this.props.take === undefined ? <h2 style={{ marginTop:"50px", textAlign:"center"}} className="headline text-thin text-s-size-30">Our <span className="text-primary">Meal</span> Plans</h2> : ""}
                 <div className="line">
-                    {this.props.take === undefined ? <FilterNav/> : ""}
+                    {this.props.take === undefined ? <><FilterNav/> <Link className="add-btn" to="/add"><i class="fa fa-plus" aria-hidden="true"></i>Add</Link></> : ""}
                     <div className="margin home-page-meals">
                         {this.state.mealPlans.length === 0 ?
                          <p className="three-quarters-loader">Loading...</p> : 
@@ -70,7 +70,7 @@ class MealPlansContainer extends Component {
             <section className="section background-white">
             {this.props.take === undefined ? <h2 style={{ marginTop:"50px", textAlign:"center"}} className="headline text-thin text-s-size-30">Our <span className="text-primary">Meal</span> Plans</h2> : ""}
             <div className="line">
-                {this.props.take === undefined ? <FilterNav/> : ""}
+                {this.props.take === undefined ? <><FilterNav/> <Link className="add-btn" to="/add"><i class="fa fa-plus" aria-hidden="true"></i>Add</Link></> : ""}
                 <div className="margin home-page-meals">
                     {this.state.mealPlans.length === 0 ?
                      <p className="three-quarters-loader">Loading...</p> : 

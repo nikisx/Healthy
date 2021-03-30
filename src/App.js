@@ -9,6 +9,7 @@ import Banner from './components/Banner/Banner';
 import ImageBanner from './components/Banner/ImageBanner';
 import MealPlansContainer from './components/MealPlansConatiner/MealPlansContainer';
 import MealPlanDetails from './components/MealPlanDetails/MealPlanDetails';
+import AddMeal from './components/AddMeal/AddMeal';
 
 
 
@@ -23,7 +24,7 @@ function App() {
           <Heading>
             HEALTHY EATING
           </Heading>
-          <MealPlansContainer take="3" />
+          <MealPlansContainer take="3"/>
           <Banner
             heading="Different menus"
             text="We've got hundreds of delicious recipes for every taste and dietary preference. Browse them all using our Search and Filter tools and choose the ones that are right for you."
@@ -35,6 +36,7 @@ function App() {
         </Route>
         <Route path="/categories/:category" component={MealPlansContainer} />
         <Route path="/details/:id" component={MealPlanDetails}/>
+        <Route path="/add" component={AddMeal}/>
       </Switch>
 
       <Footer />
