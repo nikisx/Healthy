@@ -5,8 +5,8 @@ const CustomTextArea = ({label, ...props}) => {
     return (  
         <>
             <label htmlFor={props.name}>{label}</label>
-            <textarea {...field} {...props}/>
-            {meta.touched && meta.error ? (<div>{meta.error}</div>): null}
+            <textarea className="custom-textarea" rows="10" {...field} {...props}/>
+            {meta.touched && meta.error ? (<div className="error">{meta.error}</div>): null}
         </>
     );
 }

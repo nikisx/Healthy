@@ -1,4 +1,5 @@
 @import url('https://use.fontawesome.com/e62bb441bb.css');
+
 /* .App {
   text-align: center;
 }
@@ -3170,3 +3171,9 @@ p.form-success {
         left: 90%;
         top:20%;
       }
+      .add-btn:hover{
+        color: #49BF4C !important;
+        background: white;
+        
+      }
+   

@@ -19,7 +19,7 @@ class MealPlanCard extends Component {
         return ( 
             <Link to={"/details/"+this.props.id}>
             <div style={{width:"450px", margin: "0 20px"}} >
-              <img className="margin-bottom" style={{height:"350px"}} src={this.props.image} alt=""/>
+              <img className="margin-bottom" style={{height:"350px", width:"100%"}} src={this.props.image} alt=""/>
               <h1 className="text-thin">{this.props.name}</h1>
               <h2>Category: {this.props.category}</h2> 
               <div style={{display:"flex", justifyContent:"space-between"}}>
