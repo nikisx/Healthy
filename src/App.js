@@ -10,6 +10,7 @@ import ImageBanner from './components/Banner/ImageBanner';
 import MealPlansContainer from './components/MealPlansConatiner/MealPlansContainer';
 import MealPlanDetails from './components/MealPlanDetails/MealPlanDetails';
 import AddMeal from './components/AddMeal/AddMeal';
+import MealPlanEdit from './components/MealPlanEdit/MealPlanEdit';
 
 
 
@@ -37,6 +38,8 @@ function App() {
         <Route path="/categories/:category" component={MealPlansContainer} />
         <Route path="/details/:id" component={MealPlanDetails}/>
         <Route path="/add" component={AddMeal}/>
+        <Route path="/edit/:id" component={MealPlanEdit}/>
+
       </Switch>
 
       <Footer />

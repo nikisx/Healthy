@@ -26,3 +26,14 @@ export const createMeal = async (meal) => {
         body: JSON.stringify(meal)
     });
 }
+
+export const updateMeal = async (meal, id) => {
+    console.log(JSON.stringify(meal));
+    return fetch(`https://my-users-aa933-default-rtdb.europe-west1.firebasedatabase.app/mealPlans/${id}.json`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(meal)
+    });
+}

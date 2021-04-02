@@ -1,10 +1,10 @@
 import {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import * as mealPlanService from '../../services/mealPlansService'
 import './MealPlanDetails.css'
 const MealPlanDetails = ({match}) => {
 
     let [mealPlan, setMealPlan] = useState({});
-    let [mealPlanReady, setMealPlanReady] = useState(false);
 
     useEffect(() => {
         mealPlanService.getDetails(match.params.id)
@@ -39,8 +39,8 @@ const MealPlanDetails = ({match}) => {
         </section>
 
         <div className="buttons">
-            <button className="form-btn">Edit</button>
-            <button className="form-btn">Delete</button>
+            <Link to={"/edit/"+ match.params.id} className="form-btn">Edit</Link>
+            <Link className="form-btn">Delete</Link>
         </div>
     </div>
         )

@@ -57,7 +57,7 @@ body{
     bottom: 5%;
 }
 .form-btn{
-    color: white;
+    color: white !important;
     background-color: #49BF4C;
     border: none;
     padding: 13px 25px;
