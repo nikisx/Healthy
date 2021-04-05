@@ -65,3 +65,33 @@ body{
     margin-right: 15px;
     font-size: 20px;
 }
+.form-btn:hover{
+    color: #49BF4C !important;
+    background-color: white;
+}
+.del:hover{
+    background: red ;
+    color: white !important;
+}
+
+.modal-page{
+    width:60%;
+    height: 70%;
+    position: absolute;
+    top: 20%;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 22%;
+	border-radius: 17px;
+}
+.react-confirm-alert-svg{
+	display: none;
+}
+.custom-modal{
+	position: absolute;
+	left: 30%;
+	top: 30%;
+}
+.modal-header{
+	color:white;
+	font-size: 65px;
+}

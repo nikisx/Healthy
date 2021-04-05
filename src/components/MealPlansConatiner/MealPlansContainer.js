@@ -50,7 +50,7 @@ class MealPlansContainer extends Component {
                     <div style={{display:"flex", flexWrap:"wrap"}}>
                         {this.state.mealPlans.length === 0 ?
                          <p className="three-quarters-loader">Loading...</p> : 
-                         this.state.mealPlans.map(x  =>  <MealPlanCard
+                         this.state.mealPlans.sort().reverse().map(x  =>  <MealPlanCard
                             key={x.key}
                             name={x.name}
                             image={x.img}
@@ -71,10 +71,10 @@ class MealPlansContainer extends Component {
             {this.props.take === undefined ? <h2 style={{ marginTop:"50px", textAlign:"center"}} className="headline text-thin text-s-size-30">Our <span className="text-primary">Meal</span> Plans</h2> : ""}
             <div className="line">
                 {this.props.take === undefined ? <><FilterNav/> <Link className="add-btn" to="/add"><span style={{fontWeight:"bold", fontSize:"36px"}}>+</span> Add</Link></> : ""}
-                <div className="margin home-page-meals">
+                <div style={{display:"flex", flexWrap:"wrap"}}>
                     {this.state.mealPlans.length === 0 ?
                      <p className="three-quarters-loader">Loading...</p> : 
-                     this.state.mealPlans.map(x  => x.category === this.state.categoryToFind ? <MealPlanCard
+                     this.state.mealPlans.sort().reverse().map(x  => x.category === this.state.categoryToFind ? <MealPlanCard
                         key={x.key}
                         name={x.name}
                         image={x.img}

@@ -7,7 +7,7 @@ import CustomTextInput from "../shared/CustomTextInput";
 import '../AddMeal/AddMeal.css'
 import * as mealService from '../../services/mealPlansService'
 
-const MealPlanEdit = ({match}) => {
+const MealPlanEdit = ({match, history}) => {
     const [meal, setMeal] = useState({});
 
     useEffect(() => {
@@ -47,11 +47,12 @@ const MealPlanEdit = ({match}) => {
                             })}
                             onSubmit={(values, { setSubmitting, resetForm }) => {
                                 //service
-                                setTimeout(() => {
+                               
                                     mealService.updateMeal(values,match.params.id)
+                                    .then(()=> { history.push(`/details/${match.params.id}`); return;})
                                     resetForm();
                                     setSubmitting(false);
-                                }, 3000)
+                                
     
                             }}
                         >
