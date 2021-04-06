@@ -77,7 +77,7 @@ body{
 .modal-page{
     width:60%;
     height: 70%;
-    position: absolute;
+    position: fixed;
     top: 20%;
     background-color: rgba(0, 0, 0, 0.7);
     left: 22%;

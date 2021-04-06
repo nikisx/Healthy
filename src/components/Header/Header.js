@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import $ from "jquery";
+import UserContext from '../Context/UserContext';
 
 class Header extends Component {
     constructor(props) {
@@ -29,7 +30,8 @@ class Header extends Component {
         
     }
 
-    render() { 
+    render() {
+      console.log(this.context); 
         return ( 
             <nav className="background-white background-primary-hightlight semplice-navbar">
         <div className="line">
@@ -41,7 +43,9 @@ class Header extends Component {
             <ul className="right chevron">
               <li><NavLink to="/" exact>Home</NavLink></li>
               <li><NavLink to="/categories/all">Plans</NavLink></li>
-              <li><NavLink to="/about">About</NavLink></li>
+              {this.context.isAuthenticated ?  
+              <li><NavLink to="/logout">Logout</NavLink></li> :  
+              <li><NavLink to="/login">Login</NavLink></li>}
               <li><NavLink to="/contacts">Contact</NavLink></li>
             </ul>
           </div>
@@ -50,5 +54,7 @@ class Header extends Component {
          );
     }
 }
+
+Header.contextType = UserContext;
  
 export default Header;

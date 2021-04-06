@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import * as mealPlansService from '../../services/mealPlansService'
+import UserContext from '../Context/UserContext';
 import FilterNav from '../FilterNav/FilterNav';
 import MealPlanCard from './MealPlanCard/MealPlanCard';
 class MealPlansContainer extends Component {
@@ -46,7 +47,7 @@ class MealPlansContainer extends Component {
             <section  className="section background-white">
                 {this.props.take === undefined ? <h2 style={{ marginTop:"50px", textAlign:"center"}} className="headline text-thin text-s-size-30">Our <span className="text-primary">Meal</span> Plans</h2> : ""}
                 <div className="line">
-                    {this.props.take === undefined ? <><FilterNav/> <Link className="add-btn" to="/add"><span style={{fontWeight:"bold", fontSize:"36px"}}>+</span>Add</Link></> : ""}
+                    {this.props.take === undefined ? <><FilterNav/> {this.context.isAuthenticated ? <Link className="add-btn" to="/add"><span style={{fontWeight:"bold", fontSize:"36px"}}>+</span> Add</Link>:null }</> : ""}
                     <div style={{display:"flex", flexWrap:"wrap"}}>
                         {this.state.mealPlans.length === 0 ?
                          <p className="three-quarters-loader">Loading...</p> : 
@@ -70,7 +71,7 @@ class MealPlansContainer extends Component {
             <section className="section background-white">
             {this.props.take === undefined ? <h2 style={{ marginTop:"50px", textAlign:"center"}} className="headline text-thin text-s-size-30">Our <span className="text-primary">Meal</span> Plans</h2> : ""}
             <div className="line">
-                {this.props.take === undefined ? <><FilterNav/> <Link className="add-btn" to="/add"><span style={{fontWeight:"bold", fontSize:"36px"}}>+</span> Add</Link></> : ""}
+                {this.props.take === undefined ? <><FilterNav/> {this.context.isAuthenticated ? <Link className="add-btn" to="/add"><span style={{fontWeight:"bold", fontSize:"36px"}}>+</span> Add</Link>:null }</> : ""}
                 <div style={{display:"flex", flexWrap:"wrap"}}>
                     {this.state.mealPlans.length === 0 ?
                      <p className="three-quarters-loader">Loading...</p> : 
@@ -92,4 +93,5 @@ class MealPlansContainer extends Component {
     }
 }
 
+MealPlansContainer.contextType = UserContext;
 export default MealPlansContainer;

@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import * as mealPlanService from '../../services/mealPlansService'
 import './MealPlanDetails.css';
 import { confirmAlert } from 'react-confirm-alert';
+import UserContext from '../Context/UserContext';
+import { useContext } from 'react';
 const MealPlanDetails = ({ match, history }) => {
+
+    const context = useContext(UserContext);
 
     let [mealPlan, setMealPlan] = useState({});
 
@@ -28,8 +32,8 @@ const MealPlanDetails = ({ match, history }) => {
                             <h1 className="modal-header">Are you sure?</h1>
                             <h2 style={{color:"white"}}>You want to delete this meal?</h2>
                             <div style={{display:"flex", justifyContent:"space-between"}}>
-                            <button className="form-btn del" onClick={onClose}>No</button>
-                            <button className="form-btn"
+                            <button className="form-btn" onClick={onClose}>No</button>
+                            <button className="form-btn del"
                                 onClick={async () => {
                                await mealPlanService.deleteMeal(match.params.id);
                                     history.push('/categories/all');
@@ -79,10 +83,13 @@ const MealPlanDetails = ({ match, history }) => {
 
                 </section>
 
+                {context.isAuthenticated ? 
                 <div className="buttons">
-                    <Link to={"/edit/" + match.params.id} className="form-btn">Edit</Link>
-                    <a href="#" className="form-btn del" onClick={submit}>Delete</a>
-                </div>
+                <Link to={"/edit/" + match.params.id} className="form-btn">Edit</Link>
+                <a href="#" className="form-btn del" onClick={submit}>Delete</a>
+            </div> :
+            null}
+                
             </div>
         )
     } else {
@@ -94,5 +101,7 @@ const MealPlanDetails = ({ match, history }) => {
         );
     }
 }
+
+
 
 export default MealPlanDetails;
