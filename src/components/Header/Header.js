@@ -10,7 +10,7 @@ class Header extends Component {
           
          }
     }
- 
+    
     componentDidMount(){
         var prev = 0;
         var $window = $(window);
@@ -39,8 +39,9 @@ class Header extends Component {
             <Link to="/" className="logo"><img src="/imgs/HMP-LOGO_horizontal.png" alt=""/></Link>
           </div>
           <div className="top-nav s-12 l-10">
-            <p className="nav-text"></p>
             <ul className="right chevron">
+              {this.context.isAuthenticated ? <li className="welcome-login">Welcome, {this.context.username.substring(0,this.context.username.indexOf('@'))}</li> :
+              null }
               <li><NavLink to="/" exact>Home</NavLink></li>
               <li><NavLink to="/categories/all">Plans</NavLink></li>
               {this.context.isAuthenticated ?  

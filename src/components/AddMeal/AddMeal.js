@@ -5,8 +5,12 @@ import CustomTextArea from "../shared/CustomTextArea";
 import CustomTextInput from "../shared/CustomTextInput";
 import './AddMeal.css'
 import * as mealService from '../../services/mealPlansService'
+import UserContext from '../Context/UserContext';
+import { useContext } from 'react';
 
 const AddMeal = () => {
+
+    const context = useContext(UserContext);
 
     return (
         <section className="section background-white">
@@ -37,10 +41,11 @@ const AddMeal = () => {
                         onSubmit={(values, { setSubmitting, resetForm }) => {
                             //service
                             setTimeout(() => {
+                                Object.assign(values, {userId: context.id})
                                 mealService.createMeal(values)
                                 resetForm();
                                 setSubmitting(false);
-                            }, 3000)
+                            }, 2000)
 
                         }}
                     >
@@ -58,7 +63,6 @@ const AddMeal = () => {
                                 </CustomSelect>
                                 <CustomTextInput  className="form-input" label="Image" name="img" type="text" />
                                 <h2>Ingridients</h2>
-                                <p>Please add as "ingridient - quantity"</p>
                                 <FieldArray className="form-input" name='ingridients' render={arrayHelpers => (
                                     <div>
                                         {props.values.ingridients && props.values.ingridients.length > 0 ? (
@@ -67,7 +71,7 @@ const AddMeal = () => {
                                                     <Field className = "ingr-field" name={`ingridients.${index}`} />
                                                     <button className="add-remove-btn"
                                                         type="button"
-                                                        onClick={() => arrayHelpers.remove(index)} // remove a meal from the list
+                                                        onClick={() => arrayHelpers.remove(index)} // remove a ingridient from the list
                                                     >
                                                         -
                       </button>
@@ -82,7 +86,7 @@ const AddMeal = () => {
                                             ))
                                         ) : (
                                             <button className="add-igr" type="button" onClick={() => arrayHelpers.push("")}>
-                                                {/* show this when user has removed all meals from the list */}
+                                                {/* show this when user has removed all ingridients from the list */}
                     Add an ingridient
                                             </button>
                                         )}

@@ -3176,4 +3176,13 @@ p.form-success {
         background: white;
         
       }
+      .welcome-login{
+        color: #49BF4C;
+        position: absolute;
+        left: 42%;
+        top:30%;
+        font-size: 30px;
+        font-style: italic;
+        font-weight: bold;
+      }
    

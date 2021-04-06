@@ -83,7 +83,7 @@ const MealPlanDetails = ({ match, history }) => {
 
                 </section>
 
-                {context.isAuthenticated ? 
+                {context.id === mealPlan.userId ? 
                 <div className="buttons">
                 <Link to={"/edit/" + match.params.id} className="form-btn">Edit</Link>
                 <a href="#" className="form-btn del" onClick={submit}>Delete</a>
