@@ -15,6 +15,7 @@ import Login from './components/Login/Login';
 import UserContext from './components/Context/UserContext';
 import { useEffect, useState } from 'react';
 import { auth } from './utils/firebase';
+import MyMeals from './components/MyMeals/MyMeals'
 
 function App() {
 
@@ -61,7 +62,7 @@ function App() {
           auth.signOut();
           return <Redirect to="/" />
         }} />
-
+         <Route path="/my-meals" component={MyMeals}/>
       </Switch>
 
       <Footer />

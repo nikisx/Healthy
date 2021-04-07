@@ -6,9 +6,12 @@ import CustomTextArea from "../shared/CustomTextArea";
 import CustomTextInput from "../shared/CustomTextInput";
 import '../AddMeal/AddMeal.css'
 import * as mealService from '../../services/mealPlansService'
+import UserContext from '../Context/UserContext';
+import { useContext } from 'react';
 
 const MealPlanEdit = ({match, history}) => {
     const [meal, setMeal] = useState({});
+    const context = useContext(UserContext);
 
     useEffect(() => {
         mealService.getDetails(match.params.id)
@@ -47,7 +50,7 @@ const MealPlanEdit = ({match, history}) => {
                             })}
                             onSubmit={(values, { setSubmitting, resetForm }) => {
                                 //service
-                               
+                                    Object.assign(values, {userId: context.id})
                                     mealService.updateMeal(values,match.params.id)
                                     .then(()=> { history.push(`/details/${match.params.id}`); return;})
                                     resetForm();

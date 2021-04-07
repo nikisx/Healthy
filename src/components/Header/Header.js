@@ -43,11 +43,12 @@ class Header extends Component {
               {this.context.isAuthenticated ? <li className="welcome-login">Welcome, {this.context.username.substring(0,this.context.username.indexOf('@'))}</li> :
               null }
               <li><NavLink to="/" exact>Home</NavLink></li>
-              <li><NavLink to="/categories/all">Plans</NavLink></li>
+              <li><NavLink to="/categories/all">Meals</NavLink></li>
+              {this.context.isAuthenticated ? <li><NavLink to="/my-meals">My Meals</NavLink></li>:<li><NavLink to="/register">Register</NavLink></li>}
               {this.context.isAuthenticated ?  
               <li><NavLink to="/logout">Logout</NavLink></li> :  
               <li><NavLink to="/login">Login</NavLink></li>}
-              <li><NavLink to="/contacts">Contact</NavLink></li>
+              
             </ul>
           </div>
         </div>
