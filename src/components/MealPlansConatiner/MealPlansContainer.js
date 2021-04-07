@@ -50,7 +50,7 @@ class MealPlansContainer extends Component {
                     {this.props.take === undefined ? <><FilterNav/> {this.context.isAuthenticated ? <Link className="add-btn" to="/add"><span style={{fontWeight:"bold", fontSize:"36px"}}>+</span> Add</Link>:null }</> : ""}
                     <div style={{display:"flex", flexWrap:"wrap"}}>
                         {this.state.mealPlans.length === 0 ?
-                         <p className="three-quarters-loader">Loading...</p> : 
+                         <p style={{ position: "relative", left: "49%", marginTop: "3%" }} className="three-quarters-loader">Loading...</p> : 
                          this.state.mealPlans.sort().reverse().map(x  =>  <MealPlanCard
                             key={x.key}
                             name={x.name}
@@ -74,7 +74,7 @@ class MealPlansContainer extends Component {
                 {this.props.take === undefined ? <><FilterNav/> {this.context.isAuthenticated ? <Link className="add-btn" to="/add"><span style={{fontWeight:"bold", fontSize:"36px"}}>+</span> Add</Link>:null }</> : ""}
                 <div style={{display:"flex", flexWrap:"wrap"}}>
                     {this.state.mealPlans.length === 0 ?
-                     <p className="three-quarters-loader">Loading...</p> : 
+                     <p style={{ position: "relative", left: "49%", marginTop: "3%" }} className="three-quarters-loader">Loading...</p> : 
                      this.state.mealPlans.sort().reverse().map(x  => x.category === this.state.categoryToFind ? <MealPlanCard
                         key={x.key}
                         name={x.name}

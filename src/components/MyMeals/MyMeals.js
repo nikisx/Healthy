@@ -6,7 +6,7 @@ import UserContext from '../Context/UserContext';
 import { useContext } from 'react';
 
 const MyMeals = () => {
-    const [meals, setMeals] = useState(null);
+    const [meals, setMeals] = useState([]);
 
     const context = useContext(UserContext);
 
@@ -21,8 +21,8 @@ const MyMeals = () => {
         <div className="line">
             <Link className="add-btn" to="/add"><span style={{fontWeight:"bold", fontSize:"36px"}}>+</span> Add</Link>
             <div style={{display:"flex", flexWrap:"wrap"}}>
-                {meals?.length === 0 ?
-                 <p className="three-quarters-loader">Loading...</p> : 
+                {meals.length === 0 ?
+                 <p style={{ position: "relative", left: "49%", marginTop: "3%" }} className="three-quarters-loader">Loading...</p> : 
                  meals?.sort().reverse().map(x  => x.userId === context.id ? <MealPlanCard
                     key={x.key}
                     name={x.name}
