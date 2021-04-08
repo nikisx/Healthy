@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { auth } from '../../utils/firebase';
+import './Login.css';
 
 const Login = ({
     history
 }) => {
+    const [error, setError] = useState("");
+
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
@@ -14,14 +18,17 @@ const Login = ({
         auth.signInWithEmailAndPassword(username, password)
             .then((userCredential) => {
                 history.push('/');
-            });
+            })
+            .catch(err => setError(err.message));
     };
 
     return (
         <section  className="section background-white">
              <div className="line">
-            <form onSubmit={onLoginFormSubmitHandler}>
-                <fieldset>
+            <form className="login" onSubmit={onLoginFormSubmitHandler}>
+            <input name="username"  type="text" placeholder="Email"/>
+  <input name="password" type="password" placeholder="Password"/>
+                {/* <fieldset>
                     <legend>Login</legend>
                     <p className="field">
                         <label htmlFor="username">Username</label>
@@ -40,9 +47,11 @@ const Login = ({
                         </span>
                     </p>
                     <input className="button" type="submit" className="submit" value="Login" />
-                </fieldset>
+                </fieldset> */}
+                  <button className="form-button submit">Login</button>
             </form>
             </div>
+            {error !== "" ? <div className="error-login">{error}</div> : null}
         </section>
     );
 };
