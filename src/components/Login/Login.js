@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { auth } from '../../utils/firebase';
 import './Login.css';
 
@@ -24,7 +25,7 @@ const Login = ({
 
     return (
         <section  className="section background-white">
-             <div className="line">
+             <h2 style={{ marginTop:"50px", textAlign:"center"}} className="headline text-thin text-s-size-30">Log<span className="text-primary">in</span></h2>
             <form className="login" onSubmit={onLoginFormSubmitHandler}>
             <input name="username"  type="text" placeholder="Email"/>
   <input name="password" type="password" placeholder="Password"/>
@@ -50,7 +51,7 @@ const Login = ({
                 </fieldset> */}
                   <button className="form-button submit">Login</button>
             </form>
-            </div>
+            <p className="text-redirect">Don't have an account ? <Link to="/register" className="text-primary">Register</Link></p>
             {error !== "" ? <div className="error-login">{error}</div> : null}
         </section>
     );

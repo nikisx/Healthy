@@ -15,7 +15,8 @@ import Login from './components/Login/Login';
 import UserContext from './components/Context/UserContext';
 import { useEffect, useState } from 'react';
 import { auth } from './utils/firebase';
-import MyMeals from './components/MyMeals/MyMeals'
+import MyMeals from './components/MyMeals/MyMeals';
+import Register from './components/Register/Register';
 
 function App() {
 
@@ -63,6 +64,7 @@ function App() {
           return <Redirect to="/" />
         }} />
          <Route path="/my-meals" component={MyMeals}/>
+         <Route path="/register" component={Register}/>
       </Switch>
 
       <Footer />

@@ -16,6 +16,7 @@
     -moz-transition: -moz-transform 300ms, box-shadow 300ms;
     transition: transform 300ms, box-shadow 300ms;
     box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+    margin-bottom: 0;
   }
   .login::before, .login::after {
     content: "";
@@ -73,7 +74,8 @@
     transition: background-color 300ms;
   }
   .login > button:hover {
-    background-color: #f24353;
+    background-color: white;
+    color: #49BF4C;
     transition: all 0.5s ease;
   }
   
@@ -114,4 +116,9 @@
     font-weight: bold;
     font-size: 22px;
     text-align: center;
+ }
+ .text-redirect{
+     text-align: center;
+     position: relative;
+     bottom: 132px;
  }
