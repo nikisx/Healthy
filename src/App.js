@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react';
 import { auth } from './utils/firebase';
 import MyMeals from './components/MyMeals/MyMeals';
 import Register from './components/Register/Register';
+import BackToTop from "react-back-to-top";
 
 function App() {
 
@@ -66,9 +67,15 @@ function App() {
          <Route path="/my-meals" component={MyMeals}/>
          <Route path="/register" component={Register}/>
       </Switch>
-
+        <BackToTop
+         showOnScrollUp
+         showAt={100}
+         speed={1500}
+         easing="easeInOutQuint"
+        >
+          <span>to the top</span>
+        </BackToTop>
       <Footer />
-
       </UserContext.Provider>
     </>
   );

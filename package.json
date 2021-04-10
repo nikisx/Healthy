@@ -11,6 +11,7 @@
     "jquery": "^3.6.0",
     "react": "^17.0.1",
     "react-awesome-slider": "^4.1.0",
+    "react-back-to-top-button": "0.0.14",
     "react-confirm-alert": "^2.7.0",
     "react-confirm-bootstrap": "^5.3.1",
     "react-dom": "^17.0.1",

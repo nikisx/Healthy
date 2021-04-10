@@ -3,10 +3,11 @@ import * as Yup from 'yup';
 import CustomSelect from "../shared/CustomSelect";
 import CustomTextArea from "../shared/CustomTextArea";
 import CustomTextInput from "../shared/CustomTextInput";
+import { auth } from '../../utils/firebase';
+import { Link } from "react-router-dom";
 
 
-
-const AddMeal = () => {
+const Register = ({history}) => {
 
     return (
         <section className="section background-white">
@@ -18,15 +19,16 @@ const AddMeal = () => {
                             password: '',
                         }}
                         validationSchema={Yup.object({
-                            email: Yup.string().required('Required'),
+                            email: Yup.string().email('Must be a valid email').required('Required'),
                             password: Yup.string().min(6, 'At least 6 characters').required('Required'),
                         })}
                         onSubmit={(values, { setSubmitting, resetForm }) => {
                             //service
                             setTimeout(() => {
-                                console.log(values);
+                                auth.createUserWithEmailAndPassword(values.email, values.password);
                                 resetForm();
                                 setSubmitting(false);
+                                history.push('/login')
                             }, 2000)
 
                         }}
@@ -35,8 +37,9 @@ const AddMeal = () => {
                             <Form className="add-form">
                                 <h2 style={{ marginTop:"50px", textAlign:"center"}} className="headline text-thin text-s-size-30">Create <span className="text-primary">An</span> Account</h2>
                                 <CustomTextInput className="form-input" label="Email" name="email" type="email" />
-                                <CustomTextInput className="form-input" label="Pass" name="password" type="password" />
+                                <CustomTextInput className="form-input" label="Password" name="password" type="password" />
                                 <button className="submit form-button" type="submit">{props.isSubmitting ? 'Loading...' : 'Submit'}</button>
+                                <p style={{marginLeft:"66%", marginTop:"-74px"}}>Already have an account ? <Link to="/login" className="text-primary">Login</Link></p>
                             </Form>
                         )}
                     </Formik>
@@ -46,4 +49,4 @@ const AddMeal = () => {
     );
 }
 
-export default AddMeal;
+export default Register;
