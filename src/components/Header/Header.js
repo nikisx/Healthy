@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import $ from "jquery";
 import UserContext from '../Context/UserContext';
+import './Header.css'
 
 class Header extends Component {
     constructor(props) {
